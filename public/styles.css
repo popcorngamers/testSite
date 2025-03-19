@@ -67,20 +67,20 @@ nav a:hover, nav button:hover {
 }
 
 .admin-header nav {
-    display: flex; /* Explicitly enforce flex */
-    flex-direction: row; /* Force horizontal layout */
-    justify-content: flex-start; /* Align items from left */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     gap: 1rem;
     padding: 0 1rem;
-    flex-wrap: nowrap; /* Prevent wrapping on desktop */
-    width: 100%; /* Ensure full width usage */
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
 .admin-header nav #logged-in-user {
-    margin-left: auto; /* Push to the right */
+    margin-left: auto;
     font-size: 1rem;
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap;
 }
 
 .admin-header nav #logout-btn {
@@ -117,6 +117,8 @@ section.modern-section, section.pricing, section.start-service {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
+    margin: 0 auto; /* Center the content block */
+    width: 100%;
 }
 
 .content:hover {
@@ -153,6 +155,7 @@ h2, h3 {
     color: #1e3a8a;
     margin-bottom: 1rem;
     font-weight: 600;
+    text-align: center; /* Center headings for consistency */
 }
 
 /* Forms */
@@ -237,7 +240,7 @@ button:hover {
 
 .tab-btn {
     padding: 0.5rem 1rem;
-    margin: 0; /* Remove margin for tighter fit */
+    margin: 0;
     background-color: #34495e;
     color: white;
     border: none;
@@ -311,7 +314,7 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin: 1rem auto; /* Center table on all screens */
     background: white;
     border-radius: 8px;
     overflow: hidden;
@@ -321,7 +324,7 @@ table {
 .modern-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin: 1rem auto;
     background: white;
     border-radius: 8px;
     overflow: hidden;
@@ -466,6 +469,7 @@ footer {
     table, .modern-table {
         display: block;
         width: 100%;
+        margin: 1rem auto; /* Keep centered */
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -475,34 +479,37 @@ footer {
     }
 
     tr {
-        display: block;
+        display: flex; /* Use flex for better mobile layout */
+        flex-direction: column;
         margin-bottom: 0.75rem;
         border-bottom: 1px solid #e5e7eb;
+        padding: 0.5rem; /* Add padding for spacing */
     }
 
     td {
-        display: block;
-        text-align: right;
-        padding: 0.5rem;
-        position: relative;
+        display: flex;
+        justify-content: space-between; /* Align label and value */
+        align-items: center;
+        padding: 0.5rem 0; /* Vertical padding only */
         font-size: 0.9rem;
+        position: relative;
+        text-align: left; /* Reset to left for better flow */
     }
 
     td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 0.5rem;
         font-weight: 600;
         color: #1e3a8a;
-        text-align: left;
-        width: 40%;
+        flex: 1; /* Take up half the space */
+        margin-right: 0.5rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    td {
-        padding-left: 45%;
+    td span, td a, td img { /* Target content inside td */
+        flex: 1; /* Take up remaining space */
+        text-align: right;
     }
 
     .clickable {
@@ -518,7 +525,7 @@ footer {
     }
 
     .admin-header nav {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        flex-wrap: wrap;
         gap: 0.5rem;
         padding: 0 0.5rem;
     }
@@ -563,7 +570,6 @@ footer {
 
     td {
         font-size: 0.8rem;
-        padding-left: 50%;
     }
 
     .clickable {
@@ -596,8 +602,8 @@ footer {
     }
 
     .admin-header nav {
-        flex-direction: row; /* Explicitly horizontal */
-        flex-wrap: nowrap; /* No wrapping on desktop */
+        flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 1rem;
     }
