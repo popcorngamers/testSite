@@ -1,0 +1,604 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav a, nav button {
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 80px;
+}
+
+nav a:hover, nav button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Admin Header Specific */
+.admin-header {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    padding: 1rem;
+}
+
+.admin-header nav {
+    display: flex; /* Explicitly enforce flex */
+    flex-direction: row; /* Force horizontal layout */
+    justify-content: flex-start; /* Align items from left */
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    width: 100%; /* Ensure full width usage */
+}
+
+.admin-header nav #logged-in-user {
+    margin-left: auto; /* Push to the right */
+    font-size: 1rem;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.admin-header nav #logout-btn {
+    background-color: #34495e;
+    padding: 0.5rem 1rem;
+}
+
+.admin-header nav #logout-btn:hover {
+    background-color: #e74c3c;
+}
+
+/* Main Content */
+section {
+    flex: 1;
+    padding: 6rem 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section#admin-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+section.modern-section, section.pricing, section.start-service {
+    padding: 6rem 1rem 2rem;
+}
+
+.content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+}
+
+.modern-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.admin-section {
+    flex: 1;
+    min-width: 100%;
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.admin-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+#dynamic-content {
+    flex: 1 0 100%;
+    min-height: 200px;
+}
+
+/* Headings */
+h2, h3 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+input, textarea, select, button {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+.modern-btn {
+    background: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modern-btn:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+.modern-btn.secondary {
+    background: #6b7280;
+}
+
+.modern-btn.secondary:hover {
+    background: #4b5563;
+}
+
+/* Buttons Specific */
+.action-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.action-btn:hover {
+    background-color: #2980b9;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    margin: 0; /* Remove margin for tighter fit */
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Account-Specific Styles */
+.account-summary p, .billing-summary p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.account-summary strong, .billing-summary strong {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.settings-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.settings-form label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: #1e3a8a;
+}
+
+.settings-form input, .settings-form textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+.billing-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.payment-note {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0.75rem 0;
+}
+
+/* Analytics */
+.analytics-summary {
+    margin-bottom: 1rem;
+}
+
+.analytics-summary h4 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.analytics-summary ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+th {
+    background: #1e3a8a;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.clickable {
+    cursor: pointer;
+    max-width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Modal */
+#image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#expanded-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Chart-Specific Styles */
+.chart-container {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    margin-top: 1rem;
+}
+
+#chemicalChart {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    display: block;
+}
+
+/* Tabs */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Customer Filters */
+.customer-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.customer-filters input[type="text"],
+.customer-filters select {
+    width: 100%;
+    min-width: unset;
+}
+
+/* Footer */
+footer {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 0.5rem;
+        padding: 0.5rem;
+        justify-content: center;
+    }
+
+    nav a, nav button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        min-width: 70px;
+    }
+
+    section {
+        padding: 5rem 0.5rem 1rem;
+    }
+
+    section#admin-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .admin-section {
+        min-width: 100%;
+    }
+
+    .content, .modern-card {
+        padding: 1rem;
+    }
+
+    table, .modern-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+        display: block;
+        text-align: right;
+        padding: 0.5rem;
+        position: relative;
+        font-size: 0.9rem;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0.5rem;
+        font-weight: 600;
+        color: #1e3a8a;
+        text-align: left;
+        width: 40%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    td {
+        padding-left: 45%;
+    }
+
+    .clickable {
+        max-width: 60px;
+    }
+
+    .chart-container {
+        min-height: 200px;
+    }
+
+    #chemicalChart {
+        height: 200px !important;
+    }
+
+    .admin-header nav {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav a, nav button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 60px;
+    }
+
+    .content, .modern-card {
+        padding: 0.75rem;
+    }
+
+    h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    input, textarea, select, button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .modern-btn, .action-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .settings-form {
+        padding: 0.75rem;
+    }
+
+    .billing-section {
+        padding: 0.75rem;
+    }
+
+    td {
+        font-size: 0.8rem;
+        padding-left: 50%;
+    }
+
+    .clickable {
+        max-width: 50px;
+    }
+
+    .chart-container {
+        min-height: 150px;
+    }
+
+    #chemicalChart {
+        height: 150px !important;
+    }
+
+    .admin-header nav #logged-in-user {
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop-Specific Adjustments */
+@media (min-width: 769px) {
+    nav {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav a, nav button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .admin-header nav {
+        flex-direction: row; /* Explicitly horizontal */
+        flex-wrap: nowrap; /* No wrapping on desktop */
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+}

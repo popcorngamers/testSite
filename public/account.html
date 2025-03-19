@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & R Pool Services LLC - Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Q & R Pool Services LLC</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html">My Account</a>
+            <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <section class="modern-section">
+        <div id="auth-forms" class="content modern-card">
+            <h2>Login</h2>
+            <form onsubmit="event.preventDefault(); login();">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="modern-btn">Login</button>
+            </form>
+        </div>
+
+        <div id="customer-details" class="content modern-card" style="display: none;">
+            <h2>Welcome, <span id="user-name"></span></h2>
+            <div class="account-summary">
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+                <p><strong>Phone:</strong> <span id="user-phone-display"></span></p>
+                <p><strong>Address:</strong> <span id="user-address"></span></p>
+                <p><strong>Pool Size:</strong> <span id="pool-size"></span></p>
+                <p><strong>Access Code:</strong> <span id="access-code-display"></span></p>
+                <p><strong>Lock/Combo:</strong> <span id="lock-combo-display"></span></p>
+                <p><strong>Dogs:</strong> <span id="dogs-display"></span></p>
+                <p><strong>Access Side:</strong> <span id="access-side-display"></span></p>
+                <p><strong>Notes:</strong> <span id="additional-info-display"></span></p>
+            </div>
+            <button class="modern-btn" onclick="toggleSettings()">Account Settings</button>
+
+            <div id="settings-form" class="settings-form" style="display: none;">
+                <h3>Update Account Info</h3>
+                <form id="customer-info-form" onsubmit="event.preventDefault(); updateCustomerInfo();">
+                    <label>Phone: <input type="tel" id="user-phone" placeholder="Phone"></label>
+                    <label>Access Code: <input type="text" id="access-code" placeholder="Access Code"></label>
+                    <label>Lock/Combo: <input type="text" id="lock-combo" placeholder="Lock/Combo"></label>
+                    <label>Dogs: <input type="text" id="dogs" placeholder="Dogs"></label>
+                    <label>Access Side: <input type="text" id="access-side" placeholder="Access Side"></label>
+                    <label>Notes: <textarea id="additional-info" placeholder="Additional Info"></textarea></label>
+                    <button type="submit" class="modern-btn">Update Info</button>
+                    <button type="button" class="modern-btn secondary" onclick="toggleSettings()">Cancel</button>
+                </form>
+            </div>
+
+            <div class="billing-section">
+                <h3>Billing</h3>
+                <p>Total Amount Owed: $<span id="amount-owed">0.00</span></p>
+                <button class="modern-btn" onclick="window.location.href='pay-bill.html'">Pay Bill</button>
+            </div>
+
+            <h3>Service Logs</h3>
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Before Photo</th>
+                        <th>After Photo</th>
+                        <th>Free Chlorine</th>
+                        <th>pH</th>
+                        <th>Total Alkalinity</th>
+                        <th>Stabilizer</th>
+                        <th>Calcium Hardness</th>
+                        <th>Water Temp</th>
+                        <th>Chemicals Added</th>
+                    </tr>
+                </thead>
+                <tbody id="service-entries"></tbody>
+            </table>
+            <div class="chart-container">
+                <canvas id="chemicalChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Q & R Pool Services LLC | Mesa, AZ | (480) 584-2843 | qrpoolservices@gmail.com</p>
+    </footer>
+
+    <div id="image-modal" onclick="closeModal()">
+        <span class="close-modal">×</span>
+        <img id="expanded-image">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

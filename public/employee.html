@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & R Pool Services LLC - Employee Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Q & R Pool Services LLC</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html">My Account</a>
+            <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <section>
+        <div class="content">
+            <h2>Welcome, <span id="employee-name"></span></h2>
+            <p>Pools to Service Today: <span id="today-pools">0</span></p>
+            <a href="start-service.html">Start Service</a>
+            <h3>Completed Jobs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Before Photo</th>
+                        <th>After Photo</th>
+                        <th>Free Chlorine</th>
+                        <th>pH</th>
+                        <th>Total Alkalinity</th>
+                        <th>Stabilizer</th>
+                        <th>Calcium Hardness</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="completed-jobs"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div id="image-modal" onclick="closeModal()">
+        <img id="expanded-image" alt="Expanded Image">
+    </div>
+
+    <footer>
+        <p>© 2025 Q & R Pool Services LLC | Mesa, AZ | (480) 584-2843 | qrpoolservices@gmail.com</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & R Pool Services LLC - Pay Bill</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Q & R Pool Services LLC</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html">My Account</a>
+            <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <section class="modern-section">
+        <div class="content modern-card">
+            <h2>Pay Your Bill</h2>
+            <div class="billing-summary">
+                <p>Total Amount Owed: $<span id="amount-owed">0.00</span></p>
+            </div>
+            <form id="payment-form" onsubmit="event.preventDefault(); processPayment();">
+                <label>Payment Amount: 
+                    <input type="number" id="payment-amount" step="0.01" min="0" required>
+                </label>
+                <p class="payment-note"><em>Payment processing via Stripe will be implemented in production.</em></p>
+                <button type="submit" class="modern-btn">Submit Payment</button>
+                <button type="button" class="modern-btn secondary" onclick="window.location.href='account.html'">Back to Account</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Q & R Pool Services LLC | Mesa, AZ | (480) 584-2843 | qrpoolservices@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

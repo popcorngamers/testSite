@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & R Pool Services LLC - Edit Service Log</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Q & R Pool Services LLC</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="account.html">My Account</a>
+            <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <section>
+        <div class="content">
+            <h2>Edit Service Log</h2>
+            <p>Customer: <span id="customer-name"></span></p>
+            <p>Date: <span id="log-date"></span></p>
+            <form id="edit-service-form">
+                <div>
+                    <label>Before Photo:</label>
+                    <input type="file" id="before-photo" accept="image/*" onchange="previewImage('before-photo', 'before-photo-preview')">
+                    <img id="before-photo-preview" style="display: none; max-width: 200px;" alt="Before Photo Preview">
+                </div>
+                <div>
+                    <label>After Photo:</label>
+                    <input type="file" id="after-photo" accept="image/*" onchange="previewImage('after-photo', 'after-photo-preview')">
+                    <img id="after-photo-preview" style="display: none; max-width: 200px;" alt="After Photo Preview">
+                </div>
+                <input type="number" id="free-chlorine" placeholder="Free Chlorine (ppm)" step="0.1">
+                <input type="number" id="ph" placeholder="pH" step="0.1">
+                <input type="number" id="total-alkalinity" placeholder="Total Alkalinity (ppm)" step="1">
+                <input type="number" id="stabilizer" placeholder="Stabilizer (ppm)" step="1">
+                <input type="number" id="calcium-hardness" placeholder="Calcium Hardness (ppm)" step="1">
+                <input type="number" id="water-temp" placeholder="Water Temp (°F)" step="1">
+                <label><input type="checkbox" id="netted"> Netted</label>
+                <label><input type="checkbox" id="brushed"> Brushed</label>
+                <label><input type="checkbox" id="cleaned-filter"> Cleaned Filter</label>
+                <textarea id="chemicals-added" placeholder="Chemicals Added" rows="4"></textarea>
+                <button type="button" onclick="updateServiceLog()">Update Service Log</button>
+            </form>
+            <a href="employee.html">Back to Dashboard</a>
+        </div>
+    </section>
+
+    <div id="image-modal" onclick="closeModal()">
+        <img id="expanded-image" alt="Expanded Image">
+    </div>
+
+    <footer>
+        <p>© 2025 Q & R Pool Services LLC | Mesa, AZ | (480) 584-2843 | qrpoolservices@gmail.com</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

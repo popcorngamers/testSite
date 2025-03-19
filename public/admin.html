@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & R Pool Services LLC - Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="admin-header">
+        <nav>
+            <button class="tab-btn" onclick="loadAdminTab('home')">Home</button>
+            <button class="tab-btn" onclick="loadAdminTab('customers')">Customers</button>
+            <button class="tab-btn" onclick="loadAdminTab('schedule')">Schedule</button>
+            <button class="tab-btn" onclick="loadAdminTab('my-account')">My Account</button>
+            <span id="logged-in-user"></span>
+            <button id="logout-btn" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <section id="admin-content">
+        <div class="admin-section">
+            <h2>Customers</h2>
+            <button class="action-btn" onclick="loadAdminContent('manage-customers')">Manage Customers</button>
+            <button class="action-btn" onclick="loadAdminContent('customer-logs')">Customer Logs</button>
+            <button class="action-btn" onclick="loadAdminContent('manage-receivables')">Manage Receivables</button>
+        </div>
+        <div class="admin-section">
+            <h2>Routes</h2>
+            <button class="action-btn" onclick="loadAdminContent('assign-customers')">Assign Customers</button>
+            <button class="action-btn" onclick="loadAdminContent('employee-records')">Employee Records</button>
+        </div>
+        <div class="admin-section">
+            <h2>Administrative</h2>
+            <button class="action-btn" onclick="loadAdminContent('create-employee')">Create New Employee</button>
+            <button class="action-btn" onclick="loadAdminContent('create-customer')">Create New Customer</button>
+            <button class="action-btn" onclick="loadAdminContent('analytics')">Analytics</button>
+            <button class="action-btn" onclick="loadAdminContent('manage-employees')">Manage Employees</button>
+        </div>
+        <div id="dynamic-content" class="content">
+            <!-- This will be populated by loadAdminContent('manage-customers') -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Q & R Pool Services LLC | Phoenix, AZ | (602) 555-1234 | info@qrpoolservices.com</p>
+    </footer>
+
+    <div id="image-modal" onclick="closeModal()">
+        <span class="close-modal">×</span>
+        <img id="expanded-image">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
