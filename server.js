@@ -7,7 +7,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
-const port = 3000;
+const port = 10000;
 const secret = 'your_jwt_secret'; // Replace with a secure secret in production
 
 // Middleware
